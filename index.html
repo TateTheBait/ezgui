@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Title of the document</title>
+    <title>Title of the document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $('body').keypress(function(e){
-    alert(e.which);
-    if(e.which == 27){
-        window.close();
-    }
-});
+        $(document).ready(function () {
+            // Handle teleportation when links are clicked
+            $('a').click(function (e) {
+                e.preventDefault(); // Prevent the default link behavior
+                var luaFile = $(this).attr('href');
+                // Send a request to your FiveM server to handle teleportation
+                // You may need to customize this part to suit your server's logic
+                $.get(luaFile, function (data) {
+                    // Handle the server's response or update the GUI as needed
+                });
+            });
+
+            // Close the window when Esc key is pressed
+            $(document).keydown(function (e) {
+                if (e.which == 27) {
+                    window.close();
+                }
+            });
+        });
     </script>
 </head>
-
 <body>
     <div class="gui">
         <a href="RallyTP.lua"><b>Teleport to Rally</b></a>
@@ -19,5 +32,4 @@
         <a href="SandyTP.lua"><b>Teleport to Sandy</b></a>
     </div>
 </body>
-
 </html>
