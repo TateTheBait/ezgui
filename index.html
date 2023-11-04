@@ -2,12 +2,14 @@
 <html>
 <head>
 <title>Title of the document</title>
-$('body').keypress(function(e){
+    <script>
+        $('body').keypress(function(e){
     alert(e.which);
     if(e.which == 27){
         window.close();
     }
 });
+    </script>
 </head>
 
 <body>
