@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Title of the document</title>
+$('body').keypress(function(e){
+    alert(e.which);
+    if(e.which == 27){
+        window.close();
+    }
+});
+</head>
+
+<body>
+    <div class="gui">
+        <a href="RallyTP.lua">Teleport to Rally</a>
+        <a href="LSTP.lua">Teleport to Los Santos</a>
+        <a href="SandyTP.lua">Teleport to Sandy</a>
+    </div>
+</body>
+
+</html>
