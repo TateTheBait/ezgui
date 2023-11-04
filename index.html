@@ -5,18 +5,12 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function () {
-            // Handle teleportation when links are clicked
             $('a').click(function (e) {
-                e.preventDefault(); // Prevent the default link behavior
+                e.preventDefault(); 
                 var luaFile = $(this).attr('href');
-                // Send a request to your FiveM server to handle teleportation
-                // You may need to customize this part to suit your server's logic
                 $.get(luaFile, function (data) {
-                    // Handle the server's response or update the GUI as needed
                 });
             });
-
-            // Close the window when Esc key is pressed
             $(document).keydown(function (e) {
                 if (e.which == 27) {
                     window.close();
